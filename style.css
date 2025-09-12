@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fafafa;
+  color: #333;
+}
+
+header {
+  padding: 1rem;
+  background: #00DF82;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+header h1 {
+  margin: 0;
+}
+
+.wallet-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+#search-bar {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.nft {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.nft img, .nft video, .nft canvas {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.title {
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.description {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.traits {
+  font-size: 0.8rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.spinner {
+  margin: 2rem auto;
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #00DF82;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.opensea-badge {
+ 	margin: 8px auto;
+  padding: 7px 15px;
+  font-size: 0.8em;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: #2f80ed;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-decoration: none;
+}
+
+.etherscan-badge {
+ 	/*margin-right: 8px auto;*/
+  padding: 7px 15px;
+  font-size: 0.8em;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: #e67e22;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-decoration: none;
+}

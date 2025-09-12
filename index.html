@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NFT Viewer</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Web3Modal v1 + Web3.js -->
+  <script src="https://unpkg.com/web3modal@1.9.12/dist/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.8.2/dist/web3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@walletconnect/web3-provider@1.8.0/dist/umd/index.min.js"></script>
+
+  <!-- Three.js + OrbitControls + GLTFLoader -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/examples/js/loaders/GLTFLoader.js"></script>
+</head>
+<body>
+  <header>
+    <h1>NFT Viewer</h1>
+    <div class="wallet-controls">
+      <input type="text" id="wallet-input" placeholder="Enter wallet address">
+      <button id="use-address-btn">Load Address</button>
+      <button id="connect-btn">Connect Wallet</button>
+      <button id="disconnect-btn" style="display:none;">Disconnect</button>
+      <div id="status">Not connected</div>
+    </div>
+    <input type="text" id="search-bar" placeholder="Search NFTs...">
+  </header>
+
+  <main>
+    <div id="nft-container" class="grid"></div>
+    <button id="load-more" style="display:none;">Load More</button>
+    <div id="spinner" class="spinner" style="display:none;"></div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
