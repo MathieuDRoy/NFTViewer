@@ -17,13 +17,66 @@
 </head>
 <body>
   <header>
-    <h1>NFT Viewer</h1>
-    <div class="wallet-controls">
-      <input type="text" id="wallet-input" placeholder="Enter wallet address">
-      <button id="use-address-btn">Load Address</button>
-      <button id="connect-btn">Connect Wallet</button>
-      <button id="disconnect-btn" style="display:none;">Disconnect</button>
-      <div id="status">Not connected</div>
+    <div id="sidepanel" class ="sidepanel">    
+      <table>
+        <tr>
+          <th>
+            <a href="javascript:void(0)" class="closebtn" style="text-decoration:none" onclick="closeNav()">☰</a>
+          </th>
+        </tr>
+        <tr>
+          <th>
+            <label for="eth-toggle" class="label">Ethereum Network</label>
+          </th>
+          <th>
+            <label class="switch">
+              <input id="eth-toggle" class="toggle" type="checkbox" checked>
+              <span class="slider round"></span>
+            </label>
+          </th>
+        </tr>
+        <tr>
+          <th>
+            <label for="ply-toggle" class="label">Polygon Network</label>
+          </th>
+          <th>
+            <label class="switch">
+              <input id="ply-toggle" class="toggle" type="checkbox" checked>
+              <span class="slider round"></span>
+            </label>
+          </th>
+        </tr>
+        <tr>
+          <th>
+            <label for="abs-toggle" class="label">Abstract Network</label>
+          </th>
+          <th>
+            <label class="switch">
+              <input id="abs-toggle" class="toggle" type="checkbox" checked>
+              <span class="slider round"></span>
+            </label>
+          </th>
+        </tr>
+      </table>    
+    </div>
+    <table>
+      <tr>
+        <th>
+          <button id="hambuger-button" class="openbtn" style="text-decoration:none" onclick="openNav()">☰</button>
+        </th>
+        <th>
+          <h1>NFT Viewer</h1>
+        </th>
+      </tr>
+    </table>    
+    <div class="header-right">
+      <div class="wallet-controls">
+        <input type="text" id="wallet-input" placeholder="Enter wallet address">
+        <button id="use-address-btn">Load Address</button>
+        <button id="connect-btn">Connect Wallet</button>
+        <button id="disconnect-btn" style="display:none;">Disconnect</button>
+        <div id="status">Not connected</div>
+      </div>
     </div>
     <input type="text" id="search-bar" placeholder="Search NFTs...">
   </header>
@@ -35,5 +88,16 @@
   </main>
 
   <script src="app.js"></script>
+  <script>
+    function openNav() {
+      document.getElementById("sidepanel").style.width = "390px";
+      document.getElementById("hambuger-button").style.visibility = 'hidden';
+    }
+
+    function closeNav() {
+      document.getElementById("sidepanel").style.width = "0";
+      document.getElementById("hambuger-button").style.visibility = 'visible';
+    }
+  </script>
 </body>
 </html>

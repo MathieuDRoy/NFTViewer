@@ -1,14 +1,22 @@
+:root {
+      --primary-color: #00311F;
+      --secondary-color: #FFF7E6;
+      --opensea-color: #5F64E8;
+      --ethercan-color: #E67E22;
+}
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #fafafa;
+  font-family: monaco, Consolas, Lucida Console, monospace;
+  /*font-family: Arial, sans-serif;*/
+  background: var(--secondary-color);
   color: #333;
 }
 
 header {
   padding: 1rem;
-  background: #00DF82;
-  color: white;
+  background: var(--primary-color);
+  color: var(--secondary-color);
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -23,6 +31,33 @@ header h1 {
   flex-wrap: wrap;
   gap: 0.5rem;
   align-items: center;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.wallet-controls button {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.wallet-controls button:hover {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.wallet-controls input[type="text"] {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
 #search-bar {
@@ -73,7 +108,7 @@ header h1 {
 .spinner {
   margin: 2rem auto;
   border: 6px solid #f3f3f3;
-  border-top: 6px solid #00DF82;
+  border-top: 6px solid var(--primary-color);
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -91,7 +126,7 @@ header h1 {
   border: none;
   border-radius: 5px;
   color: white;
-  background-color: #2f80ed;
+  background-color: var(--opensea-color);
   cursor: pointer;
   transition: background-color 0.2s;
   text-decoration: none;
@@ -104,8 +139,161 @@ header h1 {
   border: none;
   border-radius: 5px;
   color: white;
-  background-color: #e67e22;
+  background-color: var(--ethercan-color);
   cursor: pointer;
   transition: background-color 0.2s;
   text-decoration: none;
+}
+
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+@media(max-width: 600px) {
+    #nft-container { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+    .nft { max-width: 180px; }
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: var(--primary-color);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--primary-color);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.label {
+  font-size: 2em;
+  color: var(--primary-color);
+}
+
+.sidepanel  {
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  height: 150px;
+  top: 0;
+  left: 0;
+  background-color: var(--secondary-color);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 70px;
+  text-align: left;
+}
+
+.sidepanel input {
+  padding: 10px 10px 10px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidepanel input:hover {
+  color: var(--primary-color);
+}
+
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0;
+  /*right: 25px;*/
+  /*padding: 50px 25px;*/
+  padding-top: 40px;
+  padding-right: 25px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  font-size: 25px;
+}
+
+.openbtn {
+  font-size: 25px;
+  cursor: pointer;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color:var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.closebtn {
+  font-size: 25px;
+  cursor: pointer;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  padding: 10px 15px;
+  border: none;
+}
+
+.closebtn:hover {
+  background-color:var(--primary-color);
+  color: var(--secondary-color);
+}
+
+a {
+  color: var(--primary-color);
+}
+
+.header {
+  overflow: hidden;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  padding: 20px 10px;
+}
+
+.header-right {
+  float: right;
 }
