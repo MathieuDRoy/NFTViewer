@@ -51,6 +51,7 @@
       connectBtn.style.display = "none";
       disconnectBtn.style.display = "inline-block";
       walletInput.value = currentWallet;
+      searchBar.style.visibility = 'visible';
       fetchNFTs(currentWallet);
     } catch (err) {
       console.error("Web3Modal connect error:", err);
@@ -66,6 +67,7 @@
     connectBtn.style.display = "inline-block";
     disconnectBtn.style.display = "none";
     statusDiv.textContent = "Not connected";
+    searchBar.style.visibility = 'hidden';
   }
 
   function shorten(addr){
@@ -230,6 +232,7 @@
     const val = walletInput.value.trim();
     if(/^0x[a-fA-F0-9]{40}$/.test(val)){
       currentWallet = val;
+      searchBar.style.visibility = 'visible';
       fetchNFTs(currentWallet);
     } else {
       alert("Invalid address");
