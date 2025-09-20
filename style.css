@@ -14,6 +14,7 @@ body {
 }
 
 header {
+  font-family: monaco, Consolas, Lucida Console, monospace;
   padding: 1rem;
   background: var(--primary-color);
   color: var(--secondary-color);
@@ -27,6 +28,7 @@ header h1 {
 }
 
 .wallet-controls {
+  font-family: monaco, Consolas, Lucida Console, monospace;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
@@ -36,6 +38,7 @@ header h1 {
 }
 
 .wallet-controls button {
+  font-family: monaco, Consolas, Lucida Console, monospace;
   background: var(--secondary-color);
   color: var(--primary-color);
   border: none;
@@ -46,11 +49,13 @@ header h1 {
 }
 
 .wallet-controls button:hover {
+  font-family: monaco, Consolas, Lucida Console, monospace;
   background: var(--primary-color);
   color: var(--secondary-color);
 }
 
-.wallet-controls input[type="text"] {
+input[type="text"] {
+  font-family: monaco, Consolas, Lucida Console, monospace;
   background: var(--secondary-color);
   color: var(--primary-color);
   border: none;
@@ -274,7 +279,8 @@ input:checked + .slider:before {
   cursor: pointer;
   background-color: var(--secondary-color);
   color: var(--primary-color);
-  padding: 10px 15px;
+  right: 25px;
+  /*padding: 10px 15px;*/
   border: none;
 }
 
