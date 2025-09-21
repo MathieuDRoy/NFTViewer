@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NFT 3D Gallery</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+  <div id="sidepanel">
+    <h3>Networks</h3>
+    <label><input type="checkbox" id="eth-toggle" checked> Ethereum</label>
+    <label><input type="checkbox" id="ply-toggle"> Polygon</label>
+    <label><input type="checkbox" id="abs-toggle"> Abstract</label>
+    <button id="reload">Reload NFTs</button>
+    <button onclick="window.location.href='index.html'">Back to Grid</button>
+  </div>
+
+  <div id="info"></div>
+
+  <!-- App logic as module -->
+  <div>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/examples/jsm/controls/PointerLockControls.js"></script>
+    <div>
+      <script type="text/javascript" src="app-gallery.js"></script>
+    </div>
+  </div>
+  
+</body>
+</html>
