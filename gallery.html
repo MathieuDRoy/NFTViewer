@@ -4,16 +4,91 @@
   <meta charset="UTF-8">
   <title>NFT 3D Gallery</title>
   <link rel="stylesheet" href="style.css">
+
+  <!-- Web3Modal v1 + Web3.js -->
+  <script src="https://unpkg.com/web3modal@1.9.12/dist/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.8.2/dist/web3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@walletconnect/web3-provider@1.8.0/dist/umd/index.min.js"></script>
   
 </head>
 <body>
+  <header>
+    <div id="sidepanel" class ="sidepanel">    
+      <table>
+        <tr>
+          <th>
+            <a href="javascript:void(0)" class="closebtn" style="text-decoration:none" onclick="closeNav()">☰</a>
+          </th>
+        </tr>
+        <tr>
+          <th>
+            <label for="eth-toggle" class="label">Ethereum Network</label>
+          </th>
+          <th>
+            <label class="switch">
+              <input id="eth-toggle" class="toggle" type="checkbox" checked>
+              <span class="slider round"></span>
+            </label>
+          </th>
+        </tr>
+        <tr>
+          <th>
+            <label for="ply-toggle" class="label">Polygon Network</label>
+          </th>
+          <th>
+            <label class="switch">
+              <input id="ply-toggle" class="toggle" type="checkbox" checked>
+              <span class="slider round"></span>
+            </label>
+          </th>
+        </tr>
+        <tr>
+          <th>
+            <label for="abs-toggle" class="label">Abstract Network</label>
+          </th>
+          <th>
+            <label class="switch">
+              <input id="abs-toggle" class="toggle" type="checkbox" checked>
+              <span class="slider round"></span>
+            </label>
+          </th>
+        </tr>
+        <tr>
+          <th>
+            <button id="table-btn">Table View</button>
+          </th>
+        </tr>
+      </table>    
+    </div>
+    <table>
+      <tr>
+        <th>
+          <button id="hambuger-button" class="openbtn" style="text-decoration:none" onclick="openNav()">☰</button>
+        </th>
+        <th>
+          <h1>NFT Viewer</h1>
+        </th>
+        <th>
+          <div class="header-right">
+          <div class="wallet-controls">
+            <input type="text" id="wallet-input" placeholder="Enter wallet address">
+            <button id="use-address-btn">Load Address</button>
+            <button id="connect-btn">Connect Wallet</button>
+            <button id="disconnect-btn" style="display:none;">Disconnect</button>
+            <div id="status">Not connected</div>
+          </div>
+        </div>
+        <input type="text" id="search-bar" placeholder="Search NFTs...">
+  
+        </th>
+      </tr>
+    </table>    
+  </header>
   <div id="sidepanel">
     <h3>Networks</h3>
     <label><input type="checkbox" id="eth-toggle" checked> Ethereum</label>
     <label><input type="checkbox" id="ply-toggle"> Polygon</label>
     <label><input type="checkbox" id="abs-toggle"> Abstract</label>
-    <button id="reload">Reload NFTs</button>
-    <button onclick="window.location.href='index.html'">Back to Grid</button>
   </div>
 
   <div id="info"></div>
@@ -26,6 +101,17 @@
       <script type="text/javascript" src="app-gallery.js"></script>
     </div>
   </div>
+  <script>
+    function openNav() {
+      document.getElementById("sidepanel").style.width = "390px";
+      document.getElementById("hambuger-button").style.visibility = 'hidden';
+    }
+
+    function closeNav() {
+      document.getElementById("sidepanel").style.width = "0";
+      document.getElementById("hambuger-button").style.visibility = 'visible';
+    }
+  </script>
   
 </body>
 </html>

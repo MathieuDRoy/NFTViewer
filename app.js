@@ -175,23 +175,6 @@
     else if(lower.endsWith(".svg")){
       const img=document.createElement("img"); img.src=media; img.alt=title; card.appendChild(img);
     }
-    // else if(lower.endsWith(".glb")||lower.endsWith(".gltf")){
-    //   const canvasW=260, canvasH=260;
-    //   const scene=new THREE.Scene();
-    //   const camera=new THREE.PerspectiveCamera(50,canvasW/canvasH,0.1,1000);
-    //   const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});
-    //   renderer.setSize(canvasW,canvasH); card.appendChild(renderer.domElement);
-    //   const light=new THREE.DirectionalLight(0xffffff,1); light.position.set(5,5,5).normalize(); scene.add(light);
-    //   scene.add(new THREE.AmbientLight(0xffffff,0.6));
-    //   const controls=new THREE.OrbitControls(camera,renderer.domElement);
-    //   controls.enableDamping=true; controls.dampingFactor=0.05;
-    //   new THREE.GLTFLoader().load(media,gltf=>{
-    //     const model=gltf.scene; scene.add(model);
-    //     const box=new THREE.Box3().setFromObject(model); const size=new THREE.Vector3(); box.getSize(size);
-    //     const scale=1/Math.max(size.x,size.y,size.z); model.scale.setScalar(scale); camera.position.z=2;
-    //     (function animate(){ requestAnimationFrame(animate); controls.update(); renderer.render(scene,camera); })();
-    //   },undefined,err=>console.warn("GLTF load error:",err));
-    // }
     else {
       //const img=document.createElement("img"); img.src=media; img.alt=title; card.appendChild(img);
       if(animatedNFT) {
