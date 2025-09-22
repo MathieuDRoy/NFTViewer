@@ -159,6 +159,7 @@ function placeNFTs(nfts) {
         animatedNFT = true;
       }
     }
+    
     else {
       media = nft.media?.[0]?.gateway || nft.tokenUri?.gateway || nft.media?.[0]?.raw;
     }
