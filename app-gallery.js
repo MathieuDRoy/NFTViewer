@@ -1,3 +1,6 @@
+import * as THREE from 'three';
+import { PointerLockControls } from 'three/addons/controls/PointerLockControls.js';
+
 const ALCHEMY_KEY = "t3imt2oGKV9JZ8Ez7sS8s";
 const WALLET = "0x6eeEB2b5e7744BB10b5B02334D5f7E187af391Bb";
 const WALLETCONNECT_PROJECT_ID = "ae733e2ad1374b740d09783c00d9b1c4";
@@ -27,9 +30,11 @@ dirLight.position.set(5, 10, 7).normalize();
 scene.add(dirLight);
 
 // Gallery room
-const floor = new THREE.Mesh(new THREE.PlaneGeometry(50,50), new THREE.MeshPhongMaterial({color:0x444444}));
+const floor = new THREE.Mesh(new THREE.PlaneGeometry(50,50), new THREE.MeshPhongMaterial({color:0x00311F}));
 floor.rotation.x = -Math.PI/2; scene.add(floor);
-const wallMat = new THREE.MeshPhongMaterial({color:0x888888, side:THREE.DoubleSide});
+const ceiling = new THREE.Mesh(new THREE.PlaneGeometry(50,50), new THREE.MeshPhongMaterial({color:0x444444}));
+ceiling.rotation.x = Math.PI/2; ceiling.position.set(0,20,0); scene.add(ceiling);
+const wallMat = new THREE.MeshPhongMaterial({color:0xFFF7E6, side:THREE.DoubleSide});
 const backWall = new THREE.Mesh(new THREE.PlaneGeometry(50,20), wallMat);
 backWall.position.set(0,10,-25); scene.add(backWall);
 const leftWall = new THREE.Mesh(new THREE.PlaneGeometry(50,20), wallMat);
@@ -37,9 +42,10 @@ leftWall.rotation.y = Math.PI/2; leftWall.position.set(-25,10,0); scene.add(left
 const rightWall = new THREE.Mesh(new THREE.PlaneGeometry(50,20), wallMat);
 rightWall.rotation.y = -Math.PI/2; rightWall.position.set(25,10,0); scene.add(rightWall);
 
+
 // Controls
-// const controls = new PointerLockControls(camera, document.body);
-// document.body.addEventListener('click', () => controls.lock());
+const controls = new PointerLockControls(camera, document.body);
+document.body.addEventListener('click', () => controls.lock());
 camera.position.set(0, 2, 5);
 const keys = {};
 document.addEventListener("keydown", e => keys[e.code]=true);
@@ -149,7 +155,7 @@ function placeNFTs(nfts) {
       if(nft.metadata?.animation_url == nft.metadata?.image) {
         media = nft.metadata?.image
       } else {
-        media = nft.metadata?.animation_url
+        media = nft.metadata?.animation_url+"?not-from-cache-please"
         animatedNFT = true;
       }
     }

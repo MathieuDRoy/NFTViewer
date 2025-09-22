@@ -84,21 +84,24 @@
       </tr>
     </table>    
   </header>
-  <div id="sidepanel">
-    <h3>Networks</h3>
-    <label><input type="checkbox" id="eth-toggle" checked> Ethereum</label>
-    <label><input type="checkbox" id="ply-toggle"> Polygon</label>
-    <label><input type="checkbox" id="abs-toggle"> Abstract</label>
-  </div>
+  
 
   <div id="info"></div>
 
   <!-- App logic as module -->
   <div>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/examples/jsm/controls/PointerLockControls.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/examples/jsm/controls/PointerLockControls.js"></script> -->
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+      }
+    }
+    </script>
     <div>
-      <script type="text/javascript" src="app-gallery.js"></script>
+      <script type="module" src="app-gallery.js"></script>
     </div>
   </div>
   <script>
